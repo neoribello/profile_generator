@@ -5,26 +5,33 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-rl.question('What\'s your name? ', (answer) => {
-  console.log(`Oh, your name is ${answer}`);
+const profile = {};
 
-  rl.question('What\'s an activity you like doing? ', (answer) => {
-    console.log(`Oh, I like ${answer} too`);
+const string = "Devani loves listening to Ludovico Einaudi while coding, devouring Yak Momos for brunch, prefers Tennis over any other sport, and is amazing at dropping mad puns at inopportune times."
 
-    rl.question('What do you listen to while doing that? ', (answer) => {
-      console.log(`Oh, I like listening to ${answer}`);
+rl.question('What\'s your name? ', (name) => {
+  profile.name = name;
 
-      rl.question('Which meal is your favourite? ', (answer) => {
-        console.log(`Oh, ${answer} that sounds yummy!`);
 
-        rl.question('What\'s your favourite thing to eat for that meal? ', (answer) => {
-          console.log(`Oh, ${answer}. I'd like that right now`);
+  rl.question('What\'s an activity you like doing? ', (activity) => {
+    profile.activity = activity;
+
+    rl.question('What do you listen to while doing that? ', (music) => {
+      profile.music = music;
+
+      rl.question('Which meal is your favourite? ', (meal) => {
+        profile.meal = meal;
+
+        rl.question('What\'s your favourite thing to eat for that meal? ', (food) => {
+          profile.food = food;
           
-          rl.question('Which sport is your absolute favourite? ', (answer) => {
-            console.log(`I love watching ${answer}`);
+          rl.question('Which sport is your absolute favourite? ', (sport) => {
+            profile.sport = sport;
 
-            rl.question('What is your superpower? ', (answer) => {
-              console.log(`Wow! ${answer} thats a cool superpower`);
+            rl.question('What is your superpower? ', (power) => {
+              profile.power = power;
+
+              console.log(`${name} loves listening to ${music} while ${activity}, devouring ${food} for ${meal}, prefers ${sport} over any other sport, and is amazing at ${power}."`)
       
               rl.close();
             });
@@ -34,3 +41,5 @@ rl.question('What\'s your name? ', (answer) => {
     });
   });
 });
+
+
